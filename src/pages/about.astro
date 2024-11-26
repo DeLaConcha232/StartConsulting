@@ -14,8 +14,8 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">Workflow</Fragment>
+      <Fragment slot="desc">Procesos de trabajo</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -48,6 +48,9 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
               <h3 class="text-sm text-slate-500">
                 {teamMemberEntry.data.title}
               </h3>
+              <h4 class="text-sm text-slate-600">
+                {teamMemberEntry.data.text}
+              </h4>
             </div>
           </div>
         ))

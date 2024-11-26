@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
+import heroImage from "assets/LogoStartConsulting.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
@@ -11,8 +11,8 @@ import { Icon } from "astro-icon/components";
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
+      widths={[500, 900, 1300]}
+      sizes="(max-width: 1200) 100vw, 800px"
       loading="eager"
       format="avif"
     />
@@ -24,30 +24,9 @@ import { Icon } from "astro-icon/components";
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
       StartConsulting is a software consultancy that combines 
-      the development of custom technology solutions with an educational mission. <wbr />
+      the development of custom technology solutions with an educational mission. <br>
       Alongside my partner, we work on tailored software projects while collaborating with 
       students and early-career professionals, providing them with real
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
-    </div>
   </div>
 </main>
