@@ -7,14 +7,15 @@ import { Icon } from "astro-icon/components";
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-6 md:order-1 hidden md:block ">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[500, 900, 1300]}
-      sizes="(max-width: 1200) 100vw, 800px"
+      widths={[200, 500, 400]}
+      sizes="(max-width: 1200px)"
       loading="eager"
-      format="avif"
+      format="svg"
+      class={'w-96 h-auto'}
     />
   </div>
   <div>
