@@ -4,6 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import styles from "./stylesBlog.module.css";
 
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
@@ -18,14 +19,80 @@ publishedBlogEntries.sort(function (a, b) {
 
 <Layout title="Blog">
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
-      </Fragment>
-    </Sectionhead>
     <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <section id="about" class={styles.aboutSection}>
+        <div class={styles.container}>
+          <h1 class={styles.title}>StartConsulting</h1>
+          <p class={styles.subtitle}>Innovación, Desarrollo y Oportunidades</p>
+          <hr class={styles.divider} />
+
+          <h2 class={styles.sectionTitle}>¿Quiénes Somos?</h2>
+          <p class={styles.description}>
+            En <strong>StartConsulting</strong>, nos especializamos en el
+            desarrollo de
+            <strong>aplicaciones móviles</strong> y <strong
+              >aplicaciones web</strong
+            > diseñadas a la medida de las necesidades de nuestros clientes. Lo que
+            nos distingue es nuestro enfoque en el <strong
+              >contacto constante con nuestros clientes</strong
+            >, asegurándonos de que cada etapa del desarrollo refleje sus ideas
+            y objetivos.
+          </p>
+          <p class={styles.description}>
+            Además, somos apasionados por fomentar el crecimiento profesional de <strong
+              >estudiantes, becarios y personas con poca experiencia laboral</strong
+            >. Nuestro compromiso es brindarles la oportunidad de participar en
+            proyectos reales, ayudándolos a adquirir habilidades y experiencia
+            en un entorno profesional.
+          </p>
+
+          <h2 class={styles.sectionTitle}>Nuestros Servicios</h2>
+          <ul class={styles.servicesList}>
+            <li class={styles.serviceItem}>
+              <h3 class={styles.serviceTitle}>
+                Desarrollo de Aplicaciones Móviles
+              </h3>
+              <p>
+                - Diseñamos aplicaciones nativas y multiplataforma.<br />
+                - Integración con tecnologías modernas como IoT, IA y blockchain.<br
+                />
+                - Diseño centrado en el usuario (UX/UI).
+              </p>
+            </li>
+            <li class={styles.serviceItem}>
+              <h3 class={styles.serviceTitle}>
+                Desarrollo de Aplicaciones Web
+              </h3>
+              <p>
+                - Creación de plataformas altamente escalables.<br />
+                - Uso de tecnologías modernas como React, Next.js y Astro.<br />
+                - Enfoque en accesibilidad y rendimiento.
+              </p>
+            </li>
+            <li class={styles.serviceItem}>
+              <h3 class={styles.serviceTitle}>Contacto Personalizado</h3>
+              <p>
+                - Feedback constante durante todo el proceso.<br />
+                - Adaptación ágil a cambios o nuevas necesidades.<br />
+                - Transparencia en cada etapa del desarrollo.
+              </p>
+            </li>
+          </ul>
+
+          <h2 class={styles.sectionTitle}>Nuestro Compromiso</h2>
+          <p class={styles.description}>
+            En <strong>StartConsulting</strong>, creemos en el desarrollo del
+            talento joven. Integramos a <strong>estudiantes</strong> y personas con
+            <strong>poca experiencia</strong> para que trabajen en proyectos reales.
+            Creamos un entorno profesional con tareas asignadas, revisiones de código
+            y trabajo en equipo, ayudándoles a prepararse para el mundo laboral.
+          </p>
+
+          <h2 class={styles.sectionTitle}>Contáctanos...</h2>
+        </div>
+      </section>
+
+      <!-- <ul class="grid gap-16 max-w-4xl mx-auto">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
             <li>
@@ -67,7 +134,7 @@ publishedBlogEntries.sort(function (a, b) {
             </li>
           ))
         }
-      </ul>
+      </ul> -->
     </main>
   </Container>
 </Layout>
